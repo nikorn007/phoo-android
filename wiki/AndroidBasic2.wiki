@@ -1,11 +1,11 @@
-#summary One-sentence summary of this page.
+#summary Activity and Intent
 
 = Introduction =
 
 Add your content here.
 
 
-= Details =
+= โครงสร้างการทำงานของแอพแอนดรอยด์ =
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
