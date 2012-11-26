@@ -9,28 +9,56 @@ Windows 7 (64 bits) กับ [http://prdownloads.sourceforge.net/appserv/appser
 
 = Installation Step by Step =
 
-  # ดาวโหลด [http://prdownloads.sourceforge.net/appserv/appserv-win32-2.5.10.exe?download AppServ 2.5.10] เสร็จแล้วจะได้ตัว Install มาดังภาพครับ
+  * ดาวโหลด [http://prdownloads.sourceforge.net/appserv/appserv-win32-2.5.10.exe?download AppServ 2.5.10] เสร็จแล้วจะได้ตัว Install มาดังภาพครับ
  [https://lh6.googleusercontent.com/-MTX-jxc2Ciw/ULOALktMxaI/AAAAAAAAFVM/5BRdljes8Yo/s126/11-26-2012%25209-43-16%2520PM.jpg]
 
-  # ดับเบิ้ลคลิ๊ก
+  * ดับเบิ้ลคลิ๊กที่ ICON ที่โหลดมาสักครู่ appserv-win32-2.5.10.exe จะเห็นหน้าต่างขึ้นมาดังรูป กด Next> ไปเลยครับ
 [https://lh3.googleusercontent.com/-jrbyfennOpY/ULOArJlvXgI/AAAAAAAAFVY/U-LCgVIjg50/s513/11-26-2012%252011-27-39%2520AM.jpg]
 
+  * หน้านี้มาเป็น License กด I Agree ไปเลยครับ
 [https://lh6.googleusercontent.com/-gEwq81FxY_w/ULOAsWaVsSI/AAAAAAAAFV8/sWziF9CnI_c/s513/11-26-2012%252011-28-08%2520AM.jpg]
 
+  * เลือกตำแหน่งที่จะ Install ลงไป ปกติก็ดังที่ตั้งมาให้เลยครับ สามารถกด Next > ได้เลยครับ
 [https://lh3.googleusercontent.com/-9ASClz01ipo/ULOAqi6xTSI/AAAAAAAAFVU/GiUU0rl2-xA/s513/11-26-2012%252011-28-16%2520AM.jpg]
 
+  * อันนี้ให้เลือกว่าจะลงอะไรบ้างครับ ซึ่งเราก็ลงหมด ก็กลด Next > เช่นกันครับ
 [https://lh5.googleusercontent.com/-tUGaQOdc3oU/ULOAtGilnJI/AAAAAAAAFWM/BRbfevEVM3M/s513/11-26-2012%252011-28-26%2520AM.jpg]
 
+  * ขึ้นตอนนี้เป็นการตั้งค่า Apache โดยกำหนดค่าดังนี้
+   * Server Name : localhost
+   * Administrator's Email Address : ใส่อีเมล์ของคุณได้เลยครับ
+   * Apache HTTP Port : 80 (โดยปกติจะให้มาเป็น 80 อยู่แล้ว ก็ไม่ต้องเปลี่ยนอะไรครับ)
 [https://lh3.googleusercontent.com/-eVpsz2h7ack/ULOAsaC2jPI/AAAAAAAAFV0/600C5m28Unc/s513/11-26-2012%252011-29-10%2520AM.jpg]
 
+ * กำหนดค่าให้กับ MySQL Database
+   * Enter root password : ใส่พาสเวิร์ดสำหรับ MySQL ครับ (แนะนำว่าให้จดไว้ เพราะอีกเดียวต้องใช้ครับ)
+   * Re-enter root password : ใส่พาสเวิร์ดอันเดียวกับข้างบนครับ
+   * MySQL Server Setting : UTF-8 Unicode
 [https://lh3.googleusercontent.com/-x1s3xxDbeu4/ULOArQbeq-I/AAAAAAAAFVk/M-1lZWTIRnM/s513/11-26-2012%252011-29-50%2520AM.jpg]
 
+  * จากนั้นก็จะทำการติดตั้งครับ รอสักครู่ก็เสร็จครับ
 [https://lh4.googleusercontent.com/-s2WWtoypiPs/ULOArOcY47I/AAAAAAAAFVg/YR_gYrg9jjc/s513/11-26-2012%252011-30-00%2520AM.jpg]
 
+  * เสร็จแล้ว ก็เลือกให้เริ่ม Apache และ MySQL ได้เลยครับ
 [https://lh6.googleusercontent.com/-48M64qWpCfA/ULOAqxMjgPI/AAAAAAAAFVc/fGmKg_VHHbc/s513/11-26-2012%252011-30-20%2520AM.jpg]
 
+  * ทดสอบเข้า Browser แล้วพิมพ์ localhost จะขึ้นตัวหนังสือตัวใหญ่ๆว่า "It works!" ถือว่าได้แล้วครับ
 [https://lh3.googleusercontent.com/-umBzBHDtYdY/ULOAtFhT1MI/AAAAAAAAFWE/hbVvNlmbyvA/s695/11-26-2012%252011-31-13%2520AM.jpg]
 
+  * ทดสอบเข้า phpMyAdmin ที่ Browser แล้วพิมพ์ http://localhost/phpMyAdmin/ จะปรากฎให้ใส่ user และ password ให้ใส่ดังนี้ครับ
+   * user : root
+   * password : เป็นพาสเวิร์ดเมื่อสักครู่ที่บอกให้จดไว้นั้นหล่ะครับ
 [https://lh3.googleusercontent.com/-Osc-xPjpjH0/ULOAtWFGbeI/AAAAAAAAFWI/8PSb_9sSpTw/s646/11-26-2012%25209-36-20%2520PM.jpg]
 
-[]
+  * สุดท้ายจะได้เข้ามาหน้าต่างดังนี้ครับ ถือว่าใช้งานได้แล้วครับ
+[https://lh3.googleusercontent.com/-44yEqAjFi3M/ULOCLJVbKNI/AAAAAAAAFWw/k1nYu_BGchI/s601/11-26-2012%25209-35-37%2520PM.jpg]
+
+= Trouble Shooting =
+
+  * หากเข้า phpMySQL ไม่ได้ แนะนำว่าให้ปิด Antivirus ไปก่อนครับ
+
+= Ref =
+
+[http://www.appservnetwork.com/]
+
+[http://www.appservnetwork.com/modules.php?name=Content&pa=showpage&pid=4]
