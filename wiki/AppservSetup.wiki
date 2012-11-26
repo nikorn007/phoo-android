@@ -1,13 +1,36 @@
-#summary One-sentence summary of this page.
+#summary การติดต่อ Appserv ซอฟแวร์ที่ช่วยจำลองเครื่องเราเป็นเครื่อง Server
 
 = Introduction =
 
-Add your content here.
+ในที่นี้ผมทดลองกับเครื่องผม โดยใช้
+Windows 7 (64 bits) กับ [http://prdownloads.sourceforge.net/appserv/appserv-win32-2.5.10.exe?download AppServ 2.5.10]
+สามารถใช้งานได้ปกติดีครับ
 
 
-= Details =
+= Installation Step by Step =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+  # ดาวโหลด [http://prdownloads.sourceforge.net/appserv/appserv-win32-2.5.10.exe?download AppServ 2.5.10] เสร็จแล้วจะได้ตัว Install มาดังภาพครับ
+ [https://lh6.googleusercontent.com/-MTX-jxc2Ciw/ULOALktMxaI/AAAAAAAAFVM/5BRdljes8Yo/s126/11-26-2012%25209-43-16%2520PM.jpg]
+
+  # ดับเบิ้ลคลิ๊ก
+[https://lh3.googleusercontent.com/-jrbyfennOpY/ULOArJlvXgI/AAAAAAAAFVY/U-LCgVIjg50/s513/11-26-2012%252011-27-39%2520AM.jpg]
+
+[https://lh6.googleusercontent.com/-gEwq81FxY_w/ULOAsWaVsSI/AAAAAAAAFV8/sWziF9CnI_c/s513/11-26-2012%252011-28-08%2520AM.jpg]
+
+[https://lh3.googleusercontent.com/-9ASClz01ipo/ULOAqi6xTSI/AAAAAAAAFVU/GiUU0rl2-xA/s513/11-26-2012%252011-28-16%2520AM.jpg]
+
+[https://lh5.googleusercontent.com/-tUGaQOdc3oU/ULOAtGilnJI/AAAAAAAAFWM/BRbfevEVM3M/s513/11-26-2012%252011-28-26%2520AM.jpg]
+
+[https://lh3.googleusercontent.com/-eVpsz2h7ack/ULOAsaC2jPI/AAAAAAAAFV0/600C5m28Unc/s513/11-26-2012%252011-29-10%2520AM.jpg]
+
+[https://lh3.googleusercontent.com/-x1s3xxDbeu4/ULOArQbeq-I/AAAAAAAAFVk/M-1lZWTIRnM/s513/11-26-2012%252011-29-50%2520AM.jpg]
+
+[https://lh4.googleusercontent.com/-s2WWtoypiPs/ULOArOcY47I/AAAAAAAAFVg/YR_gYrg9jjc/s513/11-26-2012%252011-30-00%2520AM.jpg]
+
+[https://lh6.googleusercontent.com/-48M64qWpCfA/ULOAqxMjgPI/AAAAAAAAFVc/fGmKg_VHHbc/s513/11-26-2012%252011-30-20%2520AM.jpg]
+
+[https://lh3.googleusercontent.com/-umBzBHDtYdY/ULOAtFhT1MI/AAAAAAAAFWE/hbVvNlmbyvA/s695/11-26-2012%252011-31-13%2520AM.jpg]
+
+[https://lh3.googleusercontent.com/-Osc-xPjpjH0/ULOAtWFGbeI/AAAAAAAAFWI/8PSb_9sSpTw/s646/11-26-2012%25209-36-20%2520PM.jpg]
+
+[]
