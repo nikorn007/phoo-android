@@ -31,15 +31,27 @@
   * เตรียม NFC Tag ที่จะใช้ครับ
 [https://lh4.googleusercontent.com/-eV_8XLwoorw/UK7_uFc9fPI/AAAAAAAAFTc/taPUbN1HLA4/s446/2012-11-23%252011.20.08.jpg]
 
-  * สร้าง Project กันเลย
+  * สร้าง Project กันเลย New Project > Android > Android Application Project > Next
 [https://lh5.googleusercontent.com/-_L09aBKwWuE/UK7-f0n7EII/AAAAAAAAFSc/OIL4K3vyVIg/s636/11-23-2012%252010-55-17%2520AM.jpg]
 
+ * กำหนดค่าให้ Activity แบบเร็วๆเลยนะครับ
+   * Activity Name : MainActivity (เหมือนเดิมไม่ได้แก้อะไรครับ)
+   * Layout Name : activity_main (เหมือนเดิมไม่ได้แก้อะไรครับ)
+   * Title : Hello NFC
 [https://lh4.googleusercontent.com/-0bPC0Xz9fx8/UK7-gEjBOsI/AAAAAAAAFSs/VbbOlV5cEj0/s636/11-23-2012%252010-59-01%2520AM.jpg]
 
+  * ตั้งชื่อ Application ดังนี้ครับ
+   * Application Name : Hello_NFC
+   * Project Name : Hello_NFC
+   * Package Name : com.app.hello_nfc
+   * Build SDK : Android 4.1 (API16)
+   * Minimum Required SK : API10: Android 2.3.3 (Gingerbread) ***
 [https://lh3.googleusercontent.com/-oDQMgj2MJFI/UK7-giamSeI/AAAAAAAAFS0/H5PSsjaInkE/s636/11-23-2012%252010-56-00%2520AM.jpg]
 
+  * กำหนด Icon ครับ เลือกตามความชอบเลยครับ
 [https://lh4.googleusercontent.com/-GW0lKLy1qx8/UK7-ge7ouyI/AAAAAAAAFSw/0JDVD9j3MVs/s636/11-23-2012%252010-58-25%2520AM.jpg]
 
+  * สร้าง Activity ก็กด Next ไปเลยครับ
 [https://lh5.googleusercontent.com/-EbBXPReBBwo/UK7-hpuYDKI/AAAAAAAAFTE/c6GNSrBD018/s636/11-23-2012%252010-58-41%2520AM.jpg]
 
 == Edit Detail ==
