@@ -1,12 +1,11 @@
 #summary ตัวอย่าง Hello World ! สำหรับการเขียน NFC
 
-= Introduction =
+= สิ่งที่ต้องเตรียม =
 
 [https://lh3.googleusercontent.com/-gl0HOP2VkFc/UK7_uY3_IfI/AAAAAAAAFTw/E-kOepb9VyA/s492/2012-11-23%252011.17.39.jpg]
 
-  * สิ่งที่ต้องเตรียม
-   * Android Smart Phone ที่มี NFC ครับ เช่น Nexus S, Galaxy Nexus, Samsung Galaxy S3,Galaxy Note 2 หรืออื่นๆ (ในที่นี้ผมใช้ Galaxy Not 2 ครับ)
-   * NFC Tag (ดังภาพ)ซึ่ง Tag ทั้งหมดผมสั่งซื้อจากเว็บนี้ครับ [http://shop.se-update.com/%E0%B8%A8%E0%B8%B9%E0%B8%99%E0%B8%A2%E0%B9%8C%E0%B8%A3%E0%B8%A7%E0%B8%A1-NFC http://shop.se-update.com] ราคาก็ไม่แพงจนเกินไปครับ ตกอันละประมาณ 180 บาทครับ
+  * Android Smart Phone ที่มี NFC ครับ เช่น Nexus S, Galaxy Nexus, Samsung Galaxy S3,Galaxy Note 2 หรืออื่นๆ (ในที่นี้ผมใช้ Galaxy Not 2 ครับ)
+  * NFC Tag (ดังภาพ)ซึ่ง Tag ทั้งหมดผมสั่งซื้อจากเว็บนี้ครับ [http://shop.se-update.com/%E0%B8%A8%E0%B8%B9%E0%B8%99%E0%B8%A2%E0%B9%8C%E0%B8%A3%E0%B8%A7%E0%B8%A1-NFC http://shop.se-update.com] ราคาก็ไม่แพงจนเกินไปครับ ตกอันละประมาณ 180 บาทครับ
  
 
 [https://lh5.googleusercontent.com/-sHJQFL37oWQ/UK7_vR-BCJI/AAAAAAAAFT8/It3U-mE135Q/s652/2012-11-23%252011.21.05.jpg]
@@ -14,13 +13,14 @@
 
 
 
-= Details =
+= ความรู้พื้นฐาน =
 
 NFC Tag
 
-[https://lh4.googleusercontent.com/-eV_8XLwoorw/UK7_uFc9fPI/AAAAAAAAFTc/taPUbN1HLA4/s446/2012-11-23%252011.20.08.jpg]
+
 
 == Create Project ==
+[https://lh4.googleusercontent.com/-eV_8XLwoorw/UK7_uFc9fPI/AAAAAAAAFTc/taPUbN1HLA4/s446/2012-11-23%252011.20.08.jpg]
 
 [https://lh5.googleusercontent.com/-_L09aBKwWuE/UK7-f0n7EII/AAAAAAAAFSc/OIL4K3vyVIg/s636/11-23-2012%252010-55-17%2520AM.jpg]
 
