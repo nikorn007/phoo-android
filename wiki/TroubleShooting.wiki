@@ -1,0 +1,5 @@
+#summary รวบรวมปัญหาและการแก้ไขปัญหา
+
+= Topic =
+
+  * [TS_ReinstallationFailed Re-installation failed due to different application signatures]
