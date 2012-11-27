@@ -2,16 +2,16 @@
 
 = Introduction =
 
-[https://lh5.googleusercontent.com/-EKmYHORD28w/UK8G38JWMeI/AAAAAAAAFUw/ks8FlAtdk8g/s450/rapidnfc_nfc_logo.jpg]
+[https://lh3.googleusercontent.com/-gl0HOP2VkFc/UK7_uY3_IfI/AAAAAAAAFTw/E-kOepb9VyA/s492/2012-11-23%252011.17.39.jpg]
 
-[https://lh5.googleusercontent.com/-sjRU7TRBCeM/UK8G3zbufvI/AAAAAAAAFU0/pyAg7OkMHq4/s400/Nfc-logo.jpg]
-
-ผมทดสอบกัน Samsung Galaxy Note 2 (Root แล้วนะครับ) และ NFC Tag ดังภาพนี้ครับ
-ซึ่ง Tag ทั้งหมดผมสั่งซื้อจากเว็บนี้ครับ [http://shop.se-update.com/%E0%B8%A8%E0%B8%B9%E0%B8%99%E0%B8%A2%E0%B9%8C%E0%B8%A3%E0%B8%A7%E0%B8%A1-NFC http://shop.se-update.com] ราคาก็ไม่แพงจนเกินไปครับ ตกอันละประมาณ 180 บาทครับ
+  * สิ่งที่ต้องเตรียม
+   * Android Smart Phone ที่มี NFC ครับ เช่น Nexus S, Galaxy Nexus, Samsung Galaxy S3,Galaxy Note 2 หรืออื่นๆ (ในที่นี้ผมใช้ Galaxy Not 2 ครับ)
+   * NFC Tag (ดังภาพ)ซึ่ง Tag ทั้งหมดผมสั่งซื้อจากเว็บนี้ครับ [http://shop.se-update.com/%E0%B8%A8%E0%B8%B9%E0%B8%99%E0%B8%A2%E0%B9%8C%E0%B8%A3%E0%B8%A7%E0%B8%A1-NFC http://shop.se-update.com] ราคาก็ไม่แพงจนเกินไปครับ ตกอันละประมาณ 180 บาทครับ
+ 
 
 [https://lh5.googleusercontent.com/-sHJQFL37oWQ/UK7_vR-BCJI/AAAAAAAAFT8/It3U-mE135Q/s652/2012-11-23%252011.21.05.jpg]
 
-[https://lh3.googleusercontent.com/-gl0HOP2VkFc/UK7_uY3_IfI/AAAAAAAAFTw/E-kOepb9VyA/s492/2012-11-23%252011.17.39.jpg]
+
 
 
 = Details =
