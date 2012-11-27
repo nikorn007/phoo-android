@@ -1,8 +1,13 @@
 #summary ตัวอย่าง Hello World ! สำหรับการเขียน NFC
 
-= สิ่งที่ต้องเตรียม =
-
+= Application =
 [https://lh3.googleusercontent.com/-gl0HOP2VkFc/UK7_uY3_IfI/AAAAAAAAFTw/E-kOepb9VyA/s492/2012-11-23%252011.17.39.jpg]
+  # สร้าง Application
+  # เขียนข้อความลงบน EditText
+  # นำ NFC Tag เข้ามาใกล้กับโทรศัพท์มือถือ
+  # กดปุ่ม Write ! เพื่อทำการนำข้อความใส่ลงใน Tag
+
+= สิ่งที่ต้องเตรียม =
 
   * Android Smart Phone ที่มี NFC ครับ เช่น Nexus S, Galaxy Nexus, Samsung Galaxy S3,Galaxy Note 2 หรืออื่นๆ (ในที่นี้ผมใช้ Galaxy Not 2 ครับ)
   * NFC Tag (ดังภาพ)ซึ่ง Tag ทั้งหมดผมสั่งซื้อจากเว็บนี้ครับ [http://shop.se-update.com/%E0%B8%A8%E0%B8%B9%E0%B8%99%E0%B8%A2%E0%B9%8C%E0%B8%A3%E0%B8%A7%E0%B8%A1-NFC http://shop.se-update.com] ราคาก็ไม่แพงจนเกินไปครับ ตกอันละประมาณ 180 บาทครับ
@@ -15,13 +20,18 @@
 
 = ความรู้พื้นฐาน =
 
-NFC Tag
-
+สำหรับ Android NFC นั้นในขึ้นพื้นฐานเราจะใช้มาตรฐานการส่งข้อมูลแบบ NDEF (NFC Data Exchange Format)มีการทำงานหลักๆอยู่ 2 แบบดังนี้ครับ
+  # อ่านข้อมูล NDEF จาก NFC Tag
+  # สื่อสารกับอุปกรณ์อื่นๆด้วย Android Beam
+ซึ่งในที่นี้เราจะทำงานแบบแรกครับ
 
 
 == Create Project ==
+
+  * เตรียม NFC Tag ที่จะใช้ครับ
 [https://lh4.googleusercontent.com/-eV_8XLwoorw/UK7_uFc9fPI/AAAAAAAAFTc/taPUbN1HLA4/s446/2012-11-23%252011.20.08.jpg]
 
+  * สร้าง Project กันเลย
 [https://lh5.googleusercontent.com/-_L09aBKwWuE/UK7-f0n7EII/AAAAAAAAFSc/OIL4K3vyVIg/s636/11-23-2012%252010-55-17%2520AM.jpg]
 
 [https://lh4.googleusercontent.com/-0bPC0Xz9fx8/UK7-gEjBOsI/AAAAAAAAFSs/VbbOlV5cEj0/s636/11-23-2012%252010-59-01%2520AM.jpg]
