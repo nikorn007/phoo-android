@@ -55,7 +55,11 @@
 [https://lh5.googleusercontent.com/-EbBXPReBBwo/UK7-hpuYDKI/AAAAAAAAFTE/c6GNSrBD018/s636/11-23-2012%252010-58-41%2520AM.jpg]
 
 == Edit Detail ==
-
+  * สำหรับไฟล์ที่เราจะทำงานกันมีอยู่ 4 ไฟล์ดังภาพครับ
+   * MainActivity.java
+   * activity_main.xml
+   * strings.xml
+   * AndroidManifest.xml
 [https://lh3.googleusercontent.com/-6-lS14fg-88/UK7-g2YdRZI/AAAAAAAAFS4/kdD0wvRGFNE/s535/11-23-2012%252011-11-06%2520AM.jpg]
 
 === MainActivity.java ===
