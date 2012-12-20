@@ -44,5 +44,6 @@
 = Ref =
 
   * [http://blogs.remobjects.com/blogs/mh/2012/07/30/p4657]
+  * [http://support.asus.com/Download.aspx?SLanguage=en&m=Nexus+7&p=28&s=2]
   * [http://dietrichschroff.blogspot.com/2012/11/android-running-my-first-application-on.html]
   * [http://dietrichschroff.blogspot.de/2012/11/android-42-developer-options.html]
