@@ -36,6 +36,11 @@
   * เมื่อติดตั้งเสร็จแล้วจะได้ดังภาพ ถือว่าเสร็จแล้วครับ
 [https://lh4.googleusercontent.com/-ya1Z9Fs_W_M/UNLu00fy16I/AAAAAAAAGP0/HrcEyHMqOYQ/s512/12-20-2012%25204-02-16%2520PM.jpg]
 
+= Nexus 7 Configuration =
+  * เสียบสาย USB เข้ากับ Computer และ Nexus 7 ของเรา แล้วดูที่ Notification จะได้ดังภาพครับ
+[https://lh5.googleusercontent.com/-eS6578qABv8/UNLywczJtII/AAAAAAAAGRA/rcIX-y9epbI/s512/Screenshot_2012-12-20-18-10-54.jpg]
+  * คลิกเข้ามาแล้วเปลี่ยนจาก MTP เป็น PTP เป็นอันเสร็จครับ เท่านี้ก็โปรแกรมได้ปกติแล้วครับ
+[https://lh5.googleusercontent.com/-QnTXFtePZRQ/UNLywPvOg0I/AAAAAAAAGQ8/mY8tUvi8Dl0/s512/Screenshot_2012-12-20-18-11-03.jpg]
 = Ref =
 
   * [http://blogs.remobjects.com/blogs/mh/2012/07/30/p4657]
