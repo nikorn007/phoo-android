@@ -2,12 +2,26 @@
 
 = Introduction =
 
-Add your content here.
+ผมเพิ่งได้ Nexus 7 มาใหม่ครับ แล้วพอจะเขียนโปรแกรมให้เจ้า Nexus 7 ก็พบว่าหา Developer option ไม่เจอครับ เขียนโปรแกรมลงเครื่องไม่ได้...เลยไป Search ดู ก็พอวิธีดังนี้ครับ
 
 
-= Details =
+= Developer Option =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+  * สิ่งที่เราต้องการคือแบบนี้ครับ...แต่ครั้งแรกที่เราเปิดเครื่องมา ระบบมันจะซ่อนไว้ครับ ต้องเสกคาถาก่อนครับ
+[https://lh3.googleusercontent.com/-f4BLbLVLe2o/UNLoN3j1X3I/AAAAAAAAGOo/A7A-0ONv4Q0/s512/Screenshot_2012-12-20-17-06-39.jpg]
+
+  * ไปที่ Setting->System->About tablet กดเข้ามา ล่างสุดจะเห็นคำว่า Build number กดที่ข้อความนี้ประมาณ 7 ครั้ง (หรือกดรัวๆก็ได้ครับ) แล้วจะมีข้อความแสดงด้านล่างประมาณ 2-3 ข้อความว่า "You are now 3 steps away from being a developer.", "You are now a developer!"
+[https://lh4.googleusercontent.com/-1D6QPXP7bXw/UNLoN00qIWI/AAAAAAAAGOs/aU_JjeABL0k/s512/Screenshot_2012-12-20-17-06-50.jpg]
+
+  * กลับมาที่หน้า Setting เราก็จะได้สิ่งที่เราต้องการครับคือเมนู Developer option คลิ๊กเข้าไปแล้วเลือก USB Debugging เป็นอันเสร็จครับ
+[https://lh4.googleusercontent.com/-JcVjaeSv_80/UNLoN2Sql8I/AAAAAAAAGOk/M05luPLJF10/s512/Screenshot_2012-12-20-17-06-58.jpg]
+
+= Driver Installation =
+
+[http://support.asus.com/Download.aspx?SLanguage=en&m=Nexus+7&p=28&s=2 Download]
+
+= Ref =
+
+  * [http://blogs.remobjects.com/blogs/mh/2012/07/30/p4657]
+  * [http://dietrichschroff.blogspot.com/2012/11/android-running-my-first-application-on.html]
+  * [http://dietrichschroff.blogspot.de/2012/11/android-42-developer-options.html]
