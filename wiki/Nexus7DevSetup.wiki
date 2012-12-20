@@ -17,8 +17,24 @@
 [https://lh4.googleusercontent.com/-JcVjaeSv_80/UNLoN2Sql8I/AAAAAAAAGOk/M05luPLJF10/s512/Screenshot_2012-12-20-17-06-58.jpg]
 
 = Driver Installation =
-
-[http://support.asus.com/Download.aspx?SLanguage=en&m=Nexus+7&p=28&s=2 Download]
+  * ไปดาวโหลด Driver USB มาก่อนครับ [http://support.asus.com/Download.aspx?SLanguage=en&m=Nexus+7&p=28&s=2 Download] โหลดเสร็จ แยก Zip รอได้เลยครับ
+[https://lh5.googleusercontent.com/-6bMSO_t8sq0/UNLu2LdKODI/AAAAAAAAGQA/F2ILzU6VrNw/s576/12-20-2012%25205-41-09%2520PM.jpg]
+  * ต่อมาทำการอัพเดด Driver ด้วยการเข้าไปที่ Control Panel->Device Manager
+[https://lh6.googleusercontent.com/-FlrP4KRLgEw/UNLu2MsTs5I/AAAAAAAAGQE/fl5JIqAVwM8/s512/12-20-2012%25204-00-03%2520PM.jpg]
+  * ที่ Other devices จะเห็น Nexus 7 ของเราครับ
+[https://lh5.googleusercontent.com/-6yW9qclxsQw/UNLu0wj38kI/AAAAAAAAGPo/MikhLH1LGbg/s512/12-20-2012%25203-59-34%2520PM.jpg]
+  * คลิกขวาไปที่ Nexus 7 เลือก Update Driver Software..จะปรากฎหน้าต่างใหม่มาครับ
+[https://lh5.googleusercontent.com/-wwVqrnPCN5Y/UNLu1vHcNJI/AAAAAAAAGP4/MavRNxYqh6U/s371/12-20-2012%25204-00-22%2520PM.jpg]
+  * ที่หน้าต่างนี้ให้เลือก Browse my computer for driver software
+[https://lh5.googleusercontent.com/-UY0Bz6-UKIE/UNLu03_zR8I/AAAAAAAAGPs/EYYXjPA0g4M/s628/12-20-2012%25204-00-36%2520PM.jpg]
+  * จากนั้นเราก็ Browse ไปที่ไฟล์ Driver ที่เราดาวโหลดแล้วแตก Zip ไว้ในขั้นตอนแรกครับ เสร็จแล้วกด Next ได้เลยครับ
+[https://lh5.googleusercontent.com/-kw9r-2sEh-I/UNLu2fqROaI/AAAAAAAAGQQ/IeXKUbi_Nl0/s612/12-20-2012%25204-01-12%2520PM.jpg]
+  * มันก็จะเริ่มทำการติดตั้งให้ใหม่ครับ โดยจะมีหน้าต่างแสดงข้อความดังภาพ ก็เลือก Install ไปเลยครับ
+[https://lh4.googleusercontent.com/-wYFRO7Ufozc/UNLu1kIX5sI/AAAAAAAAGP8/Im3HBFA3sPM/s470/12-20-2012%25204-01-23%2520PM.jpg]
+  * จากนั้นก็รอจอติดตั้งเสร็จครับ
+[https://lh5.googleusercontent.com/-krYi_JmDSeU/UNLu0Ar6dwI/AAAAAAAAGPk/jy9a5demSgI/s628/12-20-2012%25204-01-33%2520PM.jpg]
+  * เมื่อติดตั้งเสร็จแล้วจะได้ดังภาพ ถือว่าเสร็จแล้วครับ
+[https://lh4.googleusercontent.com/-ya1Z9Fs_W_M/UNLu00fy16I/AAAAAAAAGP0/HrcEyHMqOYQ/s512/12-20-2012%25204-02-16%2520PM.jpg]
 
 = Ref =
 
