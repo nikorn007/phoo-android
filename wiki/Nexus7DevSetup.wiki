@@ -1,6 +1,6 @@
 #summary Nexus 7 Developer Setup
 
-= Introduction =
+= Nexus 7 for Developer =
 
 ผมเพิ่งได้ Nexus 7 มาใหม่ครับ แล้วพอจะเขียนโปรแกรมให้เจ้า Nexus 7 ก็พบว่าหา Developer option ไม่เจอครับ เขียนโปรแกรมลงเครื่องไม่ได้...เลยไป Search ดู ก็พอวิธีดังนี้ครับ
 
