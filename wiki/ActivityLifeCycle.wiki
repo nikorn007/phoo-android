@@ -1,13 +1,68 @@
 #summary Android Activity Life Cycle
 
-= Introduction =
-
-Add your content here.
+[http://developer.android.com/images/activity_lifecycle.png]
 
 
-= Details =
+= onCreate() =
+Android จะเรียก onCreate() เมื่อ Activity Start ในหนึ่งช่วงเวลาของ Application นั้น อาจมีการ Create และ Destroy Activity อยู่เรื่อยๆ ยกตัวอย่างเช่น เมื่อ User ทำการ Rotate Screen จะส่งผลให้ Activity ถูก Destroy และ Instance ใหม่ของ Activity เดิมก็จะถูก Create อีกครั้ง
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+เป็นไปได้ที่ Application ของเราอาจถูก Kill ถ้าหากว่า Application ของเรา Run อยู่ใน Background และ System กำลังอยู่ในสภาวะ Low Resources ซึ่งถ้าถ้า Application ถูก Kill เวลาที่ Application ของเรากลับขึ้นมาอยู่บน Foreground สี่งที่จะเกิดตามมาก็คือ Instance ใหม่ของ Activity ตัวเดิม จะถูกสร้างขึ้น และ onCreate() ก็จะถูกเรียกอีกครั้ง
+
+นอกจากนั้น onCreate() ยังเป็นเพียงโอกาสเดียว ที่เราจะสามารถสั่ง setContentView ให้กับ Activity ได้
+
+
+= onStart() =
+หลังจาก onCreate() ถูกเรียก onStart() ก็จะถูกเรียกตามมา ถ้าหาก Application ของเราถูกสั่งให้ไปอยู่ใน Background (อาจจะโดยการสั่ง Launch Application อื่น เหนือ Application ของเรา) onStart() จะถูกเรียกเมื่อเรากลับมาที่ Application อีกครั้ง
+
+
+= onResume() =
+เมื่อ Application ของเราถูก Start ขึ้นมา onResume() จะถูกเรียกหลังจาก onCreate() และ onStart() หรือเมื่อ Application เปลี่ยนสถานะจาก Background กลับมาอยู่บน Foreground อีกครั้ง onResume() ก็จะถูกเรียกเช่นเดียวกัน onResume() จะถูกเรียก ก่อนที่ Activity จะสามารถมองเห็นได้บน Screen
+
+
+= onPause() =
+onPause() จะถูกเรียก เมื่อ Application กำลังเปลี่ยนจากสถานะ Foreground ไปยัง Background ถ้าหากเรามีการประมวลผลอะไรก็ตามที่ควรจะ Run เฉพาะตอนที่ Activity อยู่บน Screen (ยกตัวอย่างเช่น การแสดง Animation) เราควรจะสั่งหยุดการประมวลผลดังกล่าวใน onPause()
+
+onPause() จะถูกเรียก ในเวลาที่เราสั่ง Launch Activity อื่น ขึ้นมาอยู่เหนือ Activity ที่กำลังแสดงผลอยู่ Application อาจถูก Kill เมื่อ System อยู่ในสภาวะ Low Resources ซึ่งกระบวนการ Kill จะเกิดขึ้นหลังจาก onPause() ซึ่งไม่ได้เกิดเป็นปกติ แต่อย่างน้อยก็ควรเตรียมรับมือไว้
+
+onPause() เป็น Method ที่สำคัญ เพราะเป็นเหมือนการเตือนครั้งสุดท้ายก่อนที่ Activity ของเราจะหายออกจาก Screen ซึ่ง Method นี้ เป็นที่ที่เราควรจะ Save ข้อมูลที่สำคัญลง Disk, Database หรือ Preferences
+
+
+= onStop() =
+onStop() จะถูกเรียกเมื่อ Activity ออกจาก Screen เรียบร้อยแล้ว หรือเมื่อเราเปลี่ยนไป Interact กับอีก Activity หนึ่งแทน (เปลี่ยนจากสถานะ Active ไปเป็น Inactive) แต่นี่ไม่ได้หมายความ Activity ถูกปิดตัวลง เพียงแค่เปลี่ยนมาอยู่ในสถานะ Inactive ถ้าหากเรามีการประมวลผลใดที่ต้องการ Run เฉพาะตอนที่ Active นี่คือ Method ที่เหมาะสมที่เราจะสั่งหยุดการประมวลผลดังกล่าว
+
+
+= onDestroy() =
+onDestroy() เป็น method สุดท้ายที่จะถูกเรียก ก่อนที่ Activity จะปิดตัวลงอย่างถาวร เป็น Method ที่เราใช้ในการคืนค่า resources หรือ clean up ใดๆ ก่อนที่ Activity จะถูกเก็บกวาดด้วย Garbage Collector
+ภายใน Method นี้ เราควรจะสั่งปิด Process ใดๆที่เราสั่ง Run ไว้ใน Background 
+
+
+= ทดสอบ Activity Life Cycle =
+เมื่อได้ทดลองเขียน Application ขึ้นมาทดสอบ Life Cycle ดังที่ได้แสดงในภาพข้างบน พบว่า
+
+  # เมื่อเรา Run Application จะเกิดเหตุการณ์
+    * onCreate()
+    * onStart()
+    * onResume()
+  # ต่อมา เมื่อกดปุ่ม Back จะเกิดเหตุการณ์
+    * onPause()
+    * onStop()
+    * onDestroy() (จะสังเกตุว่าการกดปุ่ม Back ทำให้ Activity ที่เราเขียนขึ้นถูก Destroy)
+  # เมื่อ Run Application ขึ้นมาใหม่ จะเกิดเหตุการณ์
+    * onCreate()
+    * onStart()
+    * onResume()
+  # เมื่อทดลองกดปุ่ม Dial จะเกิดเหตุการณ์
+    * onPause()
+    * onStop() (จะสังเกตุเห็นว่า ไม่เกิด Actitivity ไม่ได้ถูก Destroy)
+  # เมื่อปิดหน้าจอ Dial ลง จะเกิดเหตุการณ์
+    * onRestart()
+    * onStart()
+    * onResume() 
+
+เราควรเข้าใจการทำงานของ Activity Life Cycle เพื่อที่จะได้สามารถบันทึก State ของ Actitivity ได้ ก่อนที่จะถูก Destroy 
+
+
+= Ref =
+
+  * [http://developer.android.com/reference/android/app/Activity.html]
+  * [http://manit-tree.blogspot.com/2012/06/android-activity-life-cycle.html]
