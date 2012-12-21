@@ -16,6 +16,7 @@
   * [http://androidcontrol.blogspot.com/ Android Control]
   * [http://androidcontrol.blogspot.com/2012/01/beginning-android-training-android.html Beginning Android Training สอน Android(VDO)]
   * [http://www.androidcode.in.th/2012/ AndroidCode.in.th]
+  * [http://manit-tree.blogspot.com/search/label/Android Blog ของคุณ manit-tree]
 
 ===ภาษาอังกฤษ===
   * [http://developer.android.com Official Android developers]
