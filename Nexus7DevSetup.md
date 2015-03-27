@@ -1,0 +1,47 @@
+# Nexus 7 for Developer #
+
+ผมเพิ่งได้ Nexus 7 มาใหม่ครับ แล้วพอจะเขียนโปรแกรมให้เจ้า Nexus 7 ก็พบว่าหา Developer option ไม่เจอครับ เขียนโปรแกรมลงเครื่องไม่ได้...เลยไป Search ดู ก็พอวิธีดังนี้ครับ
+
+
+# Developer Option #
+
+  * สิ่งที่เราต้องการคือแบบนี้ครับ...แต่ครั้งแรกที่เราเปิดเครื่องมา ระบบมันจะซ่อนไว้ครับ ต้องเสกคาถาก่อนครับ
+![https://lh3.googleusercontent.com/-f4BLbLVLe2o/UNLoN3j1X3I/AAAAAAAAGOo/A7A-0ONv4Q0/s512/Screenshot_2012-12-20-17-06-39.jpg](https://lh3.googleusercontent.com/-f4BLbLVLe2o/UNLoN3j1X3I/AAAAAAAAGOo/A7A-0ONv4Q0/s512/Screenshot_2012-12-20-17-06-39.jpg)
+
+  * ไปที่ Setting->System->About tablet กดเข้ามา ล่างสุดจะเห็นคำว่า Build number กดที่ข้อความนี้ประมาณ 7 ครั้ง (หรือกดรัวๆก็ได้ครับ) แล้วจะมีข้อความแสดงด้านล่างประมาณ 2-3 ข้อความว่า "You are now 3 steps away from being a developer.", "You are now a developer!"
+![https://lh4.googleusercontent.com/-1D6QPXP7bXw/UNLoN00qIWI/AAAAAAAAGOs/aU_JjeABL0k/s512/Screenshot_2012-12-20-17-06-50.jpg](https://lh4.googleusercontent.com/-1D6QPXP7bXw/UNLoN00qIWI/AAAAAAAAGOs/aU_JjeABL0k/s512/Screenshot_2012-12-20-17-06-50.jpg)
+
+  * กลับมาที่หน้า Setting เราก็จะได้สิ่งที่เราต้องการครับคือเมนู Developer option คลิ๊กเข้าไปแล้วเลือก USB Debugging เป็นอันเสร็จครับ
+![https://lh4.googleusercontent.com/-JcVjaeSv_80/UNLoN2Sql8I/AAAAAAAAGOk/M05luPLJF10/s512/Screenshot_2012-12-20-17-06-58.jpg](https://lh4.googleusercontent.com/-JcVjaeSv_80/UNLoN2Sql8I/AAAAAAAAGOk/M05luPLJF10/s512/Screenshot_2012-12-20-17-06-58.jpg)
+
+# Driver Installation #
+  * ไปดาวโหลด Driver USB มาก่อนครับ [Download](http://support.asus.com/Download.aspx?SLanguage=en&m=Nexus+7&p=28&s=2) โหลดเสร็จ แยก Zip รอได้เลยครับ
+![https://lh5.googleusercontent.com/-6bMSO_t8sq0/UNLu2LdKODI/AAAAAAAAGQA/F2ILzU6VrNw/s576/12-20-2012%25205-41-09%2520PM.jpg](https://lh5.googleusercontent.com/-6bMSO_t8sq0/UNLu2LdKODI/AAAAAAAAGQA/F2ILzU6VrNw/s576/12-20-2012%25205-41-09%2520PM.jpg)
+  * ต่อมาทำการอัพเดด Driver ด้วยการเข้าไปที่ Control Panel->Device Manager
+![https://lh6.googleusercontent.com/-FlrP4KRLgEw/UNLu2MsTs5I/AAAAAAAAGQE/fl5JIqAVwM8/s512/12-20-2012%25204-00-03%2520PM.jpg](https://lh6.googleusercontent.com/-FlrP4KRLgEw/UNLu2MsTs5I/AAAAAAAAGQE/fl5JIqAVwM8/s512/12-20-2012%25204-00-03%2520PM.jpg)
+  * ที่ Other devices จะเห็น Nexus 7 ของเราครับ
+![https://lh5.googleusercontent.com/-6yW9qclxsQw/UNLu0wj38kI/AAAAAAAAGPo/MikhLH1LGbg/s512/12-20-2012%25203-59-34%2520PM.jpg](https://lh5.googleusercontent.com/-6yW9qclxsQw/UNLu0wj38kI/AAAAAAAAGPo/MikhLH1LGbg/s512/12-20-2012%25203-59-34%2520PM.jpg)
+  * คลิกขวาไปที่ Nexus 7 เลือก Update Driver Software..จะปรากฎหน้าต่างใหม่มาครับ
+![https://lh5.googleusercontent.com/-wwVqrnPCN5Y/UNLu1vHcNJI/AAAAAAAAGP4/MavRNxYqh6U/s371/12-20-2012%25204-00-22%2520PM.jpg](https://lh5.googleusercontent.com/-wwVqrnPCN5Y/UNLu1vHcNJI/AAAAAAAAGP4/MavRNxYqh6U/s371/12-20-2012%25204-00-22%2520PM.jpg)
+  * ที่หน้าต่างนี้ให้เลือก Browse my computer for driver software
+![https://lh5.googleusercontent.com/-UY0Bz6-UKIE/UNLu03_zR8I/AAAAAAAAGPs/EYYXjPA0g4M/s628/12-20-2012%25204-00-36%2520PM.jpg](https://lh5.googleusercontent.com/-UY0Bz6-UKIE/UNLu03_zR8I/AAAAAAAAGPs/EYYXjPA0g4M/s628/12-20-2012%25204-00-36%2520PM.jpg)
+  * จากนั้นเราก็ Browse ไปที่ไฟล์ Driver ที่เราดาวโหลดแล้วแตก Zip ไว้ในขั้นตอนแรกครับ เสร็จแล้วกด Next ได้เลยครับ
+![https://lh5.googleusercontent.com/-kw9r-2sEh-I/UNLu2fqROaI/AAAAAAAAGQQ/IeXKUbi_Nl0/s612/12-20-2012%25204-01-12%2520PM.jpg](https://lh5.googleusercontent.com/-kw9r-2sEh-I/UNLu2fqROaI/AAAAAAAAGQQ/IeXKUbi_Nl0/s612/12-20-2012%25204-01-12%2520PM.jpg)
+  * มันก็จะเริ่มทำการติดตั้งให้ใหม่ครับ โดยจะมีหน้าต่างแสดงข้อความดังภาพ ก็เลือก Install ไปเลยครับ
+![https://lh4.googleusercontent.com/-wYFRO7Ufozc/UNLu1kIX5sI/AAAAAAAAGP8/Im3HBFA3sPM/s470/12-20-2012%25204-01-23%2520PM.jpg](https://lh4.googleusercontent.com/-wYFRO7Ufozc/UNLu1kIX5sI/AAAAAAAAGP8/Im3HBFA3sPM/s470/12-20-2012%25204-01-23%2520PM.jpg)
+  * จากนั้นก็รอจอติดตั้งเสร็จครับ
+![https://lh5.googleusercontent.com/-krYi_JmDSeU/UNLu0Ar6dwI/AAAAAAAAGPk/jy9a5demSgI/s628/12-20-2012%25204-01-33%2520PM.jpg](https://lh5.googleusercontent.com/-krYi_JmDSeU/UNLu0Ar6dwI/AAAAAAAAGPk/jy9a5demSgI/s628/12-20-2012%25204-01-33%2520PM.jpg)
+  * เมื่อติดตั้งเสร็จแล้วจะได้ดังภาพ ถือว่าเสร็จแล้วครับ
+![https://lh4.googleusercontent.com/-ya1Z9Fs_W_M/UNLu00fy16I/AAAAAAAAGP0/HrcEyHMqOYQ/s512/12-20-2012%25204-02-16%2520PM.jpg](https://lh4.googleusercontent.com/-ya1Z9Fs_W_M/UNLu00fy16I/AAAAAAAAGP0/HrcEyHMqOYQ/s512/12-20-2012%25204-02-16%2520PM.jpg)
+
+# Nexus 7 Configuration #
+  * เสียบสาย USB เข้ากับ Computer และ Nexus 7 ของเรา แล้วดูที่ Notification จะได้ดังภาพครับ
+![https://lh5.googleusercontent.com/-eS6578qABv8/UNLywczJtII/AAAAAAAAGRA/rcIX-y9epbI/s512/Screenshot_2012-12-20-18-10-54.jpg](https://lh5.googleusercontent.com/-eS6578qABv8/UNLywczJtII/AAAAAAAAGRA/rcIX-y9epbI/s512/Screenshot_2012-12-20-18-10-54.jpg)
+  * คลิกเข้ามาแล้วเปลี่ยนจาก MTP เป็น PTP เป็นอันเสร็จครับ เท่านี้ก็โปรแกรมได้ปกติแล้วครับ
+![https://lh5.googleusercontent.com/-QnTXFtePZRQ/UNLywPvOg0I/AAAAAAAAGQ8/mY8tUvi8Dl0/s512/Screenshot_2012-12-20-18-11-03.jpg](https://lh5.googleusercontent.com/-QnTXFtePZRQ/UNLywPvOg0I/AAAAAAAAGQ8/mY8tUvi8Dl0/s512/Screenshot_2012-12-20-18-11-03.jpg)
+# Ref #
+
+  * http://blogs.remobjects.com/blogs/mh/2012/07/30/p4657
+  * http://support.asus.com/Download.aspx?SLanguage=en&m=Nexus+7&p=28&s=2
+  * http://dietrichschroff.blogspot.com/2012/11/android-running-my-first-application-on.html
+  * http://dietrichschroff.blogspot.de/2012/11/android-42-developer-options.html

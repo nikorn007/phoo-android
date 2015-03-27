@@ -1,0 +1,344 @@
+# Introduction #
+
+ตัวอย่างการใช้งาน SQLite อย่างง่าย ด้วย Insert Update Delete Select
+
+Credited : [Android4Health](http://android4health.wordpress.com/2012/06/23/sqlite_manage/)
+
+![https://lh4.googleusercontent.com/-t1vf6wrlaC0/UKJYwiiD6QI/AAAAAAAAFM4/YJRV_xACbek/s432/2012-11-13%252021.18.13.jpg](https://lh4.googleusercontent.com/-t1vf6wrlaC0/UKJYwiiD6QI/AAAAAAAAFM4/YJRV_xACbek/s432/2012-11-13%252021.18.13.jpg)
+
+
+# Details #
+
+  * MainActivity.java
+```java
+
+package com.example.basicsqlite;
+
+import java.util.Locale;
+
+import android.app.Activity;
+import android.database.sqlite.SQLiteCursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class MainActivity extends Activity {
+
+EditText txt_name ;
+EditText txt_age ;
+TextView txt_res;
+SQLiteDatabase db;
+
+@Override
+public void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+
+txt_name = (EditText)findViewById(R.id.txt_name);
+txt_age = (EditText)findViewById(R.id.txt_age);
+txt_res = (TextView)findViewById(R.id.txt_res);
+
+db = openOrCreateDatabase( "test1.db", SQLiteDatabase.CREATE_IF_NECESSARY, null); // สร้าง Database ชื่อ test1.db
+db.setVersion(1);
+db.setLocale(Locale.getDefault());
+db.setLockingEnabled(true);
+
+try {
+final String CREATE_TABLE_CONTAIN = "CREATE TABLE IF NOT EXISTS person ("  // ถ้าไม่มี table person ให้ทำการสร้าง
++ "_id INTEGER primary key AUTOINCREMENT,"   // ฟิลด์ _id ให้เป็น PK
++ "name TEXT,"                  // ฟิลด์ name ชนิด Text
++ "age INTEGER);";              // ฟิลด์ age  ชนิด Integer
+
+db.execSQL(CREATE_TABLE_CONTAIN);
+Toast.makeText(getBaseContext(), "Table person is created.",Toast.LENGTH_SHORT).show();
+}
+catch (Exception e) {
+Toast.makeText(getBaseContext(), "Error,"+e.getMessage(),Toast.LENGTH_SHORT).show();
+}
+showdata();
+
+} ////////////////////////////  end of onCreate  ////////////////////////////
+
+public void btn_insert_clicked(View v){  // click btn_insert
+Log.d("Clicked","btn_insert"); //  แสดงเหตุการณ์ใน  Log เพื่อ Debug ง่ายๆ
+String name = txt_name.getText().toString();   // รับค่าจาก txt_name
+String str_age = txt_age.getText().toString();
+
+if(name.equals("") && str_age.equals("")){
+return;
+}
+Integer age = Integer.valueOf(str_age);
+String sql ="insert into person values(null,'"+name+"',"+age+")";
+try{
+db.execSQL(sql);
+Toast.makeText(getBaseContext(), "Inset to person is success.",Toast.LENGTH_SHORT).show();
+}catch(Exception e){
+Toast.makeText(getBaseContext(), "Error,"+e.getMessage(),Toast.LENGTH_SHORT).show();
+}finally{
+txt_name.setText("");
+txt_age.setText("");
+showdata();
+}
+}
+
+public void btn_update_clicked(View v){
+String sql = "update person set age=0 where _id>0";
+db.execSQL(sql);
+showdata();
+}
+
+public void btn_delete_clicked(View v){
+String sql = "delete from person where age=0";
+db.execSQL(sql);
+showdata();
+}
+
+public void btn_select_clicked(View v){
+Toast.makeText(getBaseContext(), "Call to 'Showdata()' Method.",Toast.LENGTH_SHORT).show();
+showdata();
+}
+
+public void showdata(){ // ดึงข้อมูลมาแสดง
+
+txt_res.setText("");
+SQLiteCursor cur = (SQLiteCursor)db.rawQuery("select * from person",null);
+cur.moveToFirst();
+while (cur.isAfterLast() == false) {
+txt_res.append("id :"+cur.getString(0)+" ชื่อ :"+cur.getString(1)+" อายุ :"+cur.getString(2)+"\n");
+cur.moveToNext();
+}
+cur.close();
+}
+
+@Override
+protected void onDestroy(){
+super.onDestroy();
+db.close();  // Close Database Connection
+
+}
+
+@Override
+public boolean onCreateOptionsMenu(Menu menu) {
+getMenuInflater().inflate(R.menu.activity_main, menu);
+return true;
+}
+}
+
+```
+
+  * activity\_main.xml
+```xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:orientation="vertical" >
+
+<TextView
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:text="@string/test_connect_sqlite" />
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical" >
+
+<EditText
+android:id="@+id/txt_name"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:hint="@string/name" />
+
+<EditText
+android:id="@+id/txt_age"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:hint="@string/age_number_only" />
+
+
+
+Unknown end tag for &lt;/LinearLayout&gt;
+
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="horizontal" >
+
+<Button
+android:id="@+id/btn_insert"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:onClick="btn_insert_clicked"
+android:text="@string/insert" />
+
+<Button
+android:id="@+id/btn_update"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:onClick="btn_update_clicked"
+android:text="@string/update" />
+
+<Button
+android:id="@+id/btn_delete"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:onClick="btn_delete_clicked"
+android:text="@string/delete" />
+
+<Button
+android:id="@+id/btn_select"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:onClick="btn_select_clicked"
+android:text="@string/select" />
+
+
+
+Unknown end tag for &lt;/LinearLayout&gt;
+
+
+<ScrollView
+android:id="@+id/scrollView1"
+android:layout_width="match_parent"
+android:layout_height="wrap_content" >
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content" >
+
+<TextView
+android:id="@+id/txt_res"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:text="@string/textview" />
+
+
+
+Unknown end tag for &lt;/LinearLayout&gt;
+
+
+
+
+Unknown end tag for &lt;/ScrollView&gt;
+
+
+
+
+Unknown end tag for &lt;/LinearLayout&gt;
+
+
+
+```
+
+  * strings.xml
+```xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:orientation="vertical" >
+
+<TextView
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:text="@string/test_connect_sqlite" />
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical" >
+
+<EditText
+android:id="@+id/txt_name"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:hint="@string/name" />
+
+<EditText
+android:id="@+id/txt_age"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:hint="@string/age_number_only" />
+
+
+
+Unknown end tag for &lt;/LinearLayout&gt;
+
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="horizontal" >
+
+<Button
+android:id="@+id/btn_insert"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:onClick="btn_insert_clicked"
+android:text="@string/insert" />
+
+<Button
+android:id="@+id/btn_update"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:onClick="btn_update_clicked"
+android:text="@string/update" />
+
+<Button
+android:id="@+id/btn_delete"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:onClick="btn_delete_clicked"
+android:text="@string/delete" />
+
+<Button
+android:id="@+id/btn_select"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:onClick="btn_select_clicked"
+android:text="@string/select" />
+
+
+
+Unknown end tag for &lt;/LinearLayout&gt;
+
+
+<ScrollView
+android:id="@+id/scrollView1"
+android:layout_width="match_parent"
+android:layout_height="wrap_content" >
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content" >
+
+<TextView
+android:id="@+id/txt_res"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:text="@string/textview" />
+
+
+
+Unknown end tag for &lt;/LinearLayout&gt;
+
+
+
+
+Unknown end tag for &lt;/ScrollView&gt;
+
+
+
+
+Unknown end tag for &lt;/LinearLayout&gt;
+
+
+
+```

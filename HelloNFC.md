@@ -1,0 +1,488 @@
+# Application #
+![https://lh3.googleusercontent.com/-gl0HOP2VkFc/UK7_uY3_IfI/AAAAAAAAFTw/E-kOepb9VyA/s492/2012-11-23%252011.17.39.jpg](https://lh3.googleusercontent.com/-gl0HOP2VkFc/UK7_uY3_IfI/AAAAAAAAFTw/E-kOepb9VyA/s492/2012-11-23%252011.17.39.jpg)
+  1. สร้าง Application
+  1. เขียนข้อความลงบน EditText
+  1. นำ NFC Tag เข้ามาใกล้กับโทรศัพท์มือถือ
+  1. กดปุ่ม Write ! เพื่อทำการนำข้อความใส่ลงใน Tag
+
+# สิ่งที่ต้องเตรียม #
+
+  * Android Smart Phone ที่มี NFC ครับ เช่น Nexus S, Galaxy Nexus, Samsung Galaxy S3,Galaxy Note 2 หรืออื่นๆ (ในที่นี้ผมใช้ Galaxy Not 2 ครับ)
+  * NFC Tag (ดังภาพ)ซึ่ง Tag ทั้งหมดผมสั่งซื้อจากเว็บนี้ครับ [http://shop.se-update.com](http://shop.se-update.com/%E0%B8%A8%E0%B8%B9%E0%B8%99%E0%B8%A2%E0%B9%8C%E0%B8%A3%E0%B8%A7%E0%B8%A1-NFC) ราคาก็ไม่แพงจนเกินไปครับ ตกอันละประมาณ 180 บาทครับ
+
+
+![https://lh5.googleusercontent.com/-sHJQFL37oWQ/UK7_vR-BCJI/AAAAAAAAFT8/It3U-mE135Q/s652/2012-11-23%252011.21.05.jpg](https://lh5.googleusercontent.com/-sHJQFL37oWQ/UK7_vR-BCJI/AAAAAAAAFT8/It3U-mE135Q/s652/2012-11-23%252011.21.05.jpg)
+
+
+
+
+# ความรู้พื้นฐาน #
+
+สำหรับ Android NFC นั้นในขึ้นพื้นฐานเราจะใช้มาตรฐานการส่งข้อมูลแบบ NDEF (NFC Data Exchange Format)มีการทำงานหลักๆอยู่ 2 แบบดังนี้ครับ
+  1. อ่านข้อมูล NDEF จาก NFC Tag
+  1. สื่อสารกับอุปกรณ์อื่นๆด้วย Android Beam
+ซึ่งในที่นี้เราจะทำงานแบบแรกครับ
+
+
+## Create Project ##
+
+  * เตรียม NFC Tag ที่จะใช้ครับ
+![https://lh4.googleusercontent.com/-eV_8XLwoorw/UK7_uFc9fPI/AAAAAAAAFTc/taPUbN1HLA4/s446/2012-11-23%252011.20.08.jpg](https://lh4.googleusercontent.com/-eV_8XLwoorw/UK7_uFc9fPI/AAAAAAAAFTc/taPUbN1HLA4/s446/2012-11-23%252011.20.08.jpg)
+
+  * สร้าง Project กันเลย New Project > Android > Android Application Project > Next
+![https://lh5.googleusercontent.com/-_L09aBKwWuE/UK7-f0n7EII/AAAAAAAAFSc/OIL4K3vyVIg/s636/11-23-2012%252010-55-17%2520AM.jpg](https://lh5.googleusercontent.com/-_L09aBKwWuE/UK7-f0n7EII/AAAAAAAAFSc/OIL4K3vyVIg/s636/11-23-2012%252010-55-17%2520AM.jpg)
+
+  * กำหนดค่าให้ Activity แบบเร็วๆเลยนะครับ
+    * Activity Name : MainActivity (เหมือนเดิมไม่ได้แก้อะไรครับ)
+    * Layout Name : activity\_main (เหมือนเดิมไม่ได้แก้อะไรครับ)
+    * Title : Hello NFC
+![https://lh4.googleusercontent.com/-0bPC0Xz9fx8/UK7-gEjBOsI/AAAAAAAAFSs/VbbOlV5cEj0/s636/11-23-2012%252010-59-01%2520AM.jpg](https://lh4.googleusercontent.com/-0bPC0Xz9fx8/UK7-gEjBOsI/AAAAAAAAFSs/VbbOlV5cEj0/s636/11-23-2012%252010-59-01%2520AM.jpg)
+
+  * ตั้งชื่อ Application ดังนี้ครับ
+    * Application Name : Hello\_NFC
+    * Project Name : Hello\_NFC
+    * Package Name : com.app.hello\_nfc
+    * Build SDK : Android 4.1 (API16)
+    * Minimum Required SK : API10: Android 2.3.3 (Gingerbread) **![https://lh3.googleusercontent.com/-oDQMgj2MJFI/UK7-giamSeI/AAAAAAAAFS0/H5PSsjaInkE/s636/11-23-2012%252010-56-00%2520AM.jpg](https://lh3.googleusercontent.com/-oDQMgj2MJFI/UK7-giamSeI/AAAAAAAAFS0/H5PSsjaInkE/s636/11-23-2012%252010-56-00%2520AM.jpg)**
+
+  * กำหนด Icon ครับ เลือกตามความชอบเลยครับ
+![https://lh4.googleusercontent.com/-GW0lKLy1qx8/UK7-ge7ouyI/AAAAAAAAFSw/0JDVD9j3MVs/s636/11-23-2012%252010-58-25%2520AM.jpg](https://lh4.googleusercontent.com/-GW0lKLy1qx8/UK7-ge7ouyI/AAAAAAAAFSw/0JDVD9j3MVs/s636/11-23-2012%252010-58-25%2520AM.jpg)
+
+  * สร้าง Activity ก็กด Next ไปเลยครับ
+![https://lh5.googleusercontent.com/-EbBXPReBBwo/UK7-hpuYDKI/AAAAAAAAFTE/c6GNSrBD018/s636/11-23-2012%252010-58-41%2520AM.jpg](https://lh5.googleusercontent.com/-EbBXPReBBwo/UK7-hpuYDKI/AAAAAAAAFTE/c6GNSrBD018/s636/11-23-2012%252010-58-41%2520AM.jpg)
+
+## Edit Detail ##
+  * สำหรับไฟล์ที่เราจะทำงานกันมีอยู่ 4 ไฟล์ดังภาพครับ
+    * MainActivity.java
+    * activity\_main.xml
+    * strings.xml
+    * AndroidManifest.xml
+![https://lh3.googleusercontent.com/-6-lS14fg-88/UK7-g2YdRZI/AAAAAAAAFS4/kdD0wvRGFNE/s535/11-23-2012%252011-11-06%2520AM.jpg](https://lh3.googleusercontent.com/-6-lS14fg-88/UK7-g2YdRZI/AAAAAAAAFS4/kdD0wvRGFNE/s535/11-23-2012%252011-11-06%2520AM.jpg)
+
+  * ขั้นที่ 1
+    * ประกาศ Intent Filter เพื่อใช้งาน NFC
+    * สร้าง method เพื่อสร้าง NDEF message
+    * สร้าง method เพื่อเขียน NDEF message
+
+```java
+
+NfcAdapter adapter;
+PendingIntent pendingIntent;
+IntentFilter writeTagFilters[];
+boolean writeMode;
+Tag mytag;
+Context ctx;
+
+@Override
+public void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.main);
+ctx=this;
+Button btnWrite = (Button) findViewById(R.id.button);
+final TextView message = (TextView)findViewById(R.id.edit_message);
+btnWrite.setOnClickListener(new View.OnClickListener()
+{
+@Override
+public void onClick(View v) {
+try {
+if(mytag==null){
+Toast.makeText(ctx, ctx.getString(R.string.error_detected), Toast.LENGTH_LONG ).show();
+}else{
+write(message.getText().toString(),mytag);
+Toast.makeText(ctx, ctx.getString(R.string.ok_writing), Toast.LENGTH_LONG ).show();
+}
+} catch (IOException e) {
+Toast.makeText(ctx, ctx.getString(R.string.error_writing), Toast.LENGTH_LONG ).show();
+e.printStackTrace();
+} catch (FormatException e) {
+Toast.makeText(ctx, ctx.getString(R.string.error_writing) , Toast.LENGTH_LONG ).show();
+e.printStackTrace();
+}
+}
+});
+
+adapter = NfcAdapter.getDefaultAdapter(this);
+pendingIntent = PendingIntent.getActivity(this, 0, new Intent(this, getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
+IntentFilter tagDetected = new IntentFilter(NfcAdapter.ACTION_TAG_DISCOVERED);
+tagDetected.addCategory(Intent.CATEGORY_DEFAULT);
+writeTagFilters = new IntentFilter[] { tagDetected };
+}
+```
+
+  * ใน OnCreate เราได้สร้างปุ่มขึ้นมา เพื่อเวลากดจะได้เขียนข้อความลงบน Tag (write(message.getText().toString(),mytag);)
+  * สำหรับ 5 แถวสุดท้าย เป็นการสร้าง IntentFilter เพื่อบอก Android ว่า Application ของเราเปิดให้ใช้งาน NFC tag (NfcAdapter.ACTION\_TAG\_DISCOVERED)
+
+### โค๊ดทั้งหมดใน MainActivity.java ###
+
+```java
+
+package com.app.hello_nfc;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.nfc.FormatException;
+import android.nfc.NdefMessage;
+import android.nfc.NdefRecord;
+import android.nfc.NfcAdapter;
+import android.nfc.Tag;
+import android.nfc.tech.Ndef;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+@SuppressLint({ "ParserError", "ParserError" })
+public class MainActivity extends Activity {
+
+NfcAdapter adapter;
+PendingIntent pendingIntent;
+IntentFilter writeTagFilters[];
+boolean writeMode;
+Tag mytag;
+Context ctx;
+
+@Override
+public void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+
+ctx = this;
+Button btnWrite = (Button) findViewById(R.id.button);
+final TextView message = (TextView) findViewById(R.id.edit_message);
+
+btnWrite.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+try {
+if (mytag == null) {
+Toast.makeText(ctx,
+ctx.getString(R.string.error_detected),
+Toast.LENGTH_LONG).show();
+} else {
+write(message.getText().toString(), mytag);
+Toast.makeText(ctx, ctx.getString(R.string.ok_writing),
+Toast.LENGTH_LONG).show();
+}
+} catch (IOException e) {
+Toast.makeText(ctx, ctx.getString(R.string.error_writing),
+Toast.LENGTH_LONG).show();
+e.printStackTrace();
+} catch (FormatException e) {
+Toast.makeText(ctx, ctx.getString(R.string.error_writing),
+Toast.LENGTH_LONG).show();
+e.printStackTrace();
+}
+}
+});
+
+adapter = NfcAdapter.getDefaultAdapter(this);
+pendingIntent = PendingIntent.getActivity(this, 0, new Intent(this,
+getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
+IntentFilter tagDetected = new IntentFilter(
+NfcAdapter.ACTION_TAG_DISCOVERED);
+tagDetected.addCategory(Intent.CATEGORY_DEFAULT);
+writeTagFilters = new IntentFilter[] { tagDetected };
+}
+
+private void write(String text, Tag tag) throws IOException,
+FormatException {
+
+NdefRecord[] records = { createRecord(text) };
+NdefMessage message = new NdefMessage(records);
+// Get an instance of Ndef for the tag.
+Ndef ndef = Ndef.get(tag);
+// Enable I/O
+ndef.connect();
+// Write the message
+ndef.writeNdefMessage(message);
+// Close the connection
+ndef.close();
+}
+
+private NdefRecord createRecord(String text)
+throws UnsupportedEncodingException {
+String lang = "en";
+byte[] textBytes = text.getBytes();
+byte[] langBytes = lang.getBytes("US-ASCII");
+int langLength = langBytes.length;
+int textLength = textBytes.length;
+byte[] payload = new byte[1 + langLength + textLength];
+
+// set status byte (see NDEF spec for actual bits)
+payload[0] = (byte) langLength;
+
+// copy langbytes and textbytes into payload
+System.arraycopy(langBytes, 0, payload, 1, langLength);
+System.arraycopy(textBytes, 0, payload, 1 + langLength, textLength);
+
+NdefRecord recordNFC = new NdefRecord(NdefRecord.TNF_WELL_KNOWN,
+NdefRecord.RTD_TEXT, new byte[0], payload);
+
+return recordNFC;
+}
+
+@Override
+protected void onNewIntent(Intent intent) {
+if (NfcAdapter.ACTION_TAG_DISCOVERED.equals(intent.getAction())) {
+mytag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
+Toast.makeText(this,
+this.getString(R.string.ok_detection) + mytag.toString(),
+Toast.LENGTH_LONG).show();
+}
+}
+
+@Override
+public void onPause() {
+super.onPause();
+WriteModeOff();
+}
+
+@Override
+public void onResume() {
+super.onResume();
+WriteModeOn();
+}
+
+private void WriteModeOn() {
+writeMode = true;
+adapter.enableForegroundDispatch(this, pendingIntent, writeTagFilters,
+null);
+}
+
+private void WriteModeOff() {
+writeMode = false;
+adapter.disableForegroundDispatch(this);
+}
+
+@Override
+public boolean onCreateOptionsMenu(Menu menu) {
+getMenuInflater().inflate(R.menu.activity_main, menu);
+return true;
+}
+}
+
+```
+
+
+### activity\_main.xml ###
+
+![https://lh3.googleusercontent.com/-gl0HOP2VkFc/UK7_uY3_IfI/AAAAAAAAFTw/E-kOepb9VyA/s492/2012-11-23%252011.17.39.jpg](https://lh3.googleusercontent.com/-gl0HOP2VkFc/UK7_uY3_IfI/AAAAAAAAFTw/E-kOepb9VyA/s492/2012-11-23%252011.17.39.jpg)
+
+```xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:orientation="vertical" >
+
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/write_your_message" >
+
+
+
+Unknown end tag for &lt;/TextView&gt;
+
+
+
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:layout_marginTop="20sp" >
+
+<EditText
+android:id="@+id/edit_message"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_weight="2"
+android:hint="@string/message" />
+
+<Button
+android:id="@+id/button"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:text="@string/write" />
+
+
+Unknown end tag for &lt;/LinearLayout&gt;
+
+
+
+
+
+Unknown end tag for &lt;/LinearLayout&gt;
+
+
+```
+
+### strings.xml ###
+
+```xml
+
+<resources>
+
+<string name="app_name">Hello_NFC
+
+Unknown end tag for &lt;/string&gt;
+
+
+
+<string name="hello_world">Hello world!
+
+Unknown end tag for &lt;/string&gt;
+
+
+
+<string name="menu_settings">Settings
+
+Unknown end tag for &lt;/string&gt;
+
+
+
+<string name="title_activity_main">Hello NFC
+
+Unknown end tag for &lt;/string&gt;
+
+
+
+<string name="error_detected">TAG NOT DETECTED. WHERE DO YOU WANT WRITE!?!?
+
+Unknown end tag for &lt;/string&gt;
+
+
+
+<string name="ok_writing">I HAVE WRITTEN YOUR FIRST TAG!!
+
+Unknown end tag for &lt;/string&gt;
+
+
+
+<string name="error_writing">ERROR DURING WRITING. ARE YOU SURE THAT YOUR TAG IS CLOSE TO YOUR MOBILE PHONE?
+
+Unknown end tag for &lt;/string&gt;
+
+
+
+<string name="ok_detection">TAG DETECTED: 
+
+Unknown end tag for &lt;/string&gt;
+
+
+
+<string name="write_your_message">Write your massage :
+
+Unknown end tag for &lt;/string&gt;
+
+
+
+<string name="message">message
+
+Unknown end tag for &lt;/string&gt;
+
+
+
+<string name="write">Write !!
+
+Unknown end tag for &lt;/string&gt;
+
+
+
+
+
+Unknown end tag for &lt;/resources&gt;
+
+
+```
+
+### AndroidManifest.xml ###
+
+![https://lh6.googleusercontent.com/-6Dnqelz8baE/UK7-f7L8d2I/AAAAAAAAFSY/WvHY70E_otw/s562/11-23-2012%252011-12-09%2520AM.jpg](https://lh6.googleusercontent.com/-6Dnqelz8baE/UK7-f7L8d2I/AAAAAAAAFSY/WvHY70E_otw/s562/11-23-2012%252011-12-09%2520AM.jpg)
+
+![https://lh3.googleusercontent.com/-MkuWod7RwGg/UK7-e51tBqI/AAAAAAAAFSU/4A_YY48cvKs/s437/11-23-2012%252011-12-42%2520AM.jpg](https://lh3.googleusercontent.com/-MkuWod7RwGg/UK7-e51tBqI/AAAAAAAAFSU/4A_YY48cvKs/s437/11-23-2012%252011-12-42%2520AM.jpg)
+
+![https://lh6.googleusercontent.com/-hbBKMURmv6Q/UK7_vX9WBmI/AAAAAAAAFUA/P08BLdU_36k/s653/11-23-2012%252011-15-51%2520AM.jpg](https://lh6.googleusercontent.com/-hbBKMURmv6Q/UK7_vX9WBmI/AAAAAAAAFUA/P08BLdU_36k/s653/11-23-2012%252011-15-51%2520AM.jpg)
+
+  * All Code : AndroidManifest.xml
+
+```xml
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+package="com.app.hello_nfc"
+android:versionCode="1"
+android:versionName="1.0" >
+
+<uses-sdk
+android:minSdkVersion="10"
+android:targetSdkVersion="15" />
+<uses-permission android:name="android.permission.NFC"/>
+
+<application
+android:icon="@drawable/ic_launcher"
+android:label="@string/app_name"
+android:theme="@style/AppTheme" >
+<activity
+android:name=".MainActivity"
+android:label="@string/title_activity_main" >
+<intent-filter>
+<action android:name="android.intent.action.MAIN" />
+
+<category android:name="android.intent.category.LAUNCHER" />
+
+
+Unknown end tag for &lt;/intent-filter&gt;
+
+
+
+
+Unknown end tag for &lt;/activity&gt;
+
+
+
+
+Unknown end tag for &lt;/application&gt;
+
+
+
+
+
+Unknown end tag for &lt;/manifest&gt;
+
+
+```
+
+![https://lh6.googleusercontent.com/-6Dnqelz8baE/UK7-f7L8d2I/AAAAAAAAFSY/WvHY70E_otw/s562/11-23-2012%252011-12-09%2520AM.jpg](https://lh6.googleusercontent.com/-6Dnqelz8baE/UK7-f7L8d2I/AAAAAAAAFSY/WvHY70E_otw/s562/11-23-2012%252011-12-09%2520AM.jpg)
+
+![https://lh3.googleusercontent.com/-MkuWod7RwGg/UK7-e51tBqI/AAAAAAAAFSU/4A_YY48cvKs/s437/11-23-2012%252011-12-42%2520AM.jpg](https://lh3.googleusercontent.com/-MkuWod7RwGg/UK7-e51tBqI/AAAAAAAAFSU/4A_YY48cvKs/s437/11-23-2012%252011-12-42%2520AM.jpg)
+
+![https://lh6.googleusercontent.com/-hbBKMURmv6Q/UK7_vX9WBmI/AAAAAAAAFUA/P08BLdU_36k/s653/11-23-2012%252011-15-51%2520AM.jpg](https://lh6.googleusercontent.com/-hbBKMURmv6Q/UK7_vX9WBmI/AAAAAAAAFUA/P08BLdU_36k/s653/11-23-2012%252011-15-51%2520AM.jpg)
+
+## TEST ##
+
+![https://lh4.googleusercontent.com/-KvF52KCM6Q0/UK7_usjXQWI/AAAAAAAAFTk/xNSqO58aqgM/s491/2012-11-23%252011.18.14.jpg](https://lh4.googleusercontent.com/-KvF52KCM6Q0/UK7_usjXQWI/AAAAAAAAFTk/xNSqO58aqgM/s491/2012-11-23%252011.18.14.jpg)
+
+![https://lh3.googleusercontent.com/-P6omHenIveU/UK7_uii-qKI/AAAAAAAAFTs/6Vq-szZ0PPM/s490/2012-11-23%252011.18.44.jpg](https://lh3.googleusercontent.com/-P6omHenIveU/UK7_uii-qKI/AAAAAAAAFTs/6Vq-szZ0PPM/s490/2012-11-23%252011.18.44.jpg)
+
+### TagWriter ###
+
+![https://lh3.googleusercontent.com/-hdRU_D61ZcY/UK7_ujxafrI/AAAAAAAAFTo/3kPYuy9YXEc/s489/2012-11-23%252011.25.08.jpg](https://lh3.googleusercontent.com/-hdRU_D61ZcY/UK7_ujxafrI/AAAAAAAAFTo/3kPYuy9YXEc/s489/2012-11-23%252011.25.08.jpg)
+
+# Ref #
+
+http://www.framentos.com/en/android-tutorial/2012/07/31/write-hello-world-into-a-nfc-tag-with-a/
+
+http://www.androidpolice.com/2012/04/12/fun-with-nfc-automating-simple-tasks-with-an-nfc-capable-phone/
+
+http://developer.android.com/guide/topics/connectivity/nfc/index.html

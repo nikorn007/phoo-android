@@ -1,0 +1,26 @@
+# Introduction #
+
+[กลับหน้าหลัก Trouble Shooting ](TroubleShooting.md)
+
+ปัญหา compile code แล้ว เกิด error แจ้งว่า Re-installation failed due to different application signatures
+
+
+# Details #
+
+# Solution #
+
+## Option 1 ##
+
+Go to Settings -> Application -> Manage Application -> "tab on your application" -> uninstall
+
+Run your application from Eclipse again and it'll definitely work for you :)
+
+## Option 2 ##
+
+Synchronize your debug.keystore files between the two machines, so you are signing with the same key in both places.
+
+# Ref #
+
+http://stackoverflow.com/questions/5719701/re-installation-failed-due-to-different-application-signatures
+
+http://stackoverflow.com/questions/5841946/re-installation-failed-due-to-different-application-signatures-possible-to-o

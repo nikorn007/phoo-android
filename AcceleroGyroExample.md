@@ -1,0 +1,243 @@
+# Introduction #
+
+ตัวอย่างการใช้งาน Accelerometer และ Gyroscope อย่างง่าย
+
+![https://lh3.googleusercontent.com/-UeouhZoBEaw/UKNUKswtSuI/AAAAAAAAFNo/rPFj_RtZn0M/s468/2012-11-14%252015.14.59.jpg](https://lh3.googleusercontent.com/-UeouhZoBEaw/UKNUKswtSuI/AAAAAAAAFNo/rPFj_RtZn0M/s468/2012-11-14%252015.14.59.jpg)
+
+credited : http://www.helloandroid.com/tutorials/using-android-phones-sensors
+
+
+# Details #
+
+  * MainActivity.java
+```java
+
+package com.app.sensors;
+
+import android.app.Activity;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.os.Bundle;
+import android.view.Menu;
+import android.widget.TextView;
+
+public class MainActivity extends Activity implements SensorEventListener {
+
+SensorManager sensorManager = null;
+
+// for accelerometer values
+TextView outputX;
+TextView outputY;
+TextView outputZ;
+
+// for orientation values
+TextView outputX2;
+TextView outputY2;
+TextView outputZ2;
+
+@Override
+public void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+
+sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+
+// just some textviews, for data output
+outputX = (TextView) findViewById(R.id.textView01);
+outputY = (TextView) findViewById(R.id.textView02);
+outputZ = (TextView) findViewById(R.id.textView03);
+
+outputX2 = (TextView) findViewById(R.id.textView04);
+outputY2 = (TextView) findViewById(R.id.textView05);
+outputZ2 = (TextView) findViewById(R.id.TextView06);
+
+}
+
+@Override
+protected void onResume() {
+super.onResume();
+sensorManager.registerListener(this,
+sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+sensorManager.SENSOR_DELAY_NORMAL);
+sensorManager.registerListener(this,
+sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE),
+sensorManager.SENSOR_DELAY_NORMAL);
+}
+
+@Override
+protected void onStop() {
+super.onStop();
+sensorManager.unregisterListener(this,
+sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER));
+sensorManager.unregisterListener(this,
+sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE));
+}
+
+public void onSensorChanged(SensorEvent event) {
+synchronized (this) {
+switch (event.sensor.getType()) {
+case Sensor.TYPE_ACCELEROMETER:
+outputX.setText("Acceleration X:" + Float.toString(event.values[0]));
+outputY.setText("Acceleration Y:" + Float.toString(event.values[1]));
+outputZ.setText("Acceleration Z:" + Float.toString(event.values[2]));
+break;
+case Sensor.TYPE_GYROSCOPE:
+outputX2.setText("Orientation X:" + Float.toString(event.values[0]));
+outputY2.setText("Orientation Y:" + Float.toString(event.values[1]));
+outputZ2.setText("Orientation Z:" + Float.toString(event.values[2]));
+break;
+
+}
+}
+}
+
+@Override
+public void onAccuracyChanged(Sensor sensor, int accuracy) {
+}
+
+@Override
+public boolean onCreateOptionsMenu(Menu menu) {
+getMenuInflater().inflate(R.menu.activity_main, menu);
+return true;
+}
+}
+
+```
+
+  * activity\_main.xml
+```xml
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/textView3"
+android:layout_width="match_parent"
+android:layout_height="match_parent" >
+
+<LinearLayout
+android:id="@+id/TextView6"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_alignParentLeft="true"
+android:layout_alignParentRight="true"
+android:layout_alignParentTop="true"
+android:orientation="vertical" >
+
+<TextView
+android:id="@+id/textView01"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/textview" />
+
+<TextView
+android:id="@+id/textView02"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/textview" />
+
+<TextView
+android:id="@+id/textView03"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/textview" />
+
+<TextView
+android:id="@+id/textView04"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/textview" />
+
+<TextView
+android:id="@+id/textView05"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/textview" />
+
+<TextView
+android:id="@+id/TextView06"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/textview" />
+
+
+
+Unknown end tag for &lt;/LinearLayout&gt;
+
+
+
+
+
+Unknown end tag for &lt;/RelativeLayout&gt;
+
+
+
+```
+
+  * strings.xml
+```xml
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/textView3"
+android:layout_width="match_parent"
+android:layout_height="match_parent" >
+
+<LinearLayout
+android:id="@+id/TextView6"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_alignParentLeft="true"
+android:layout_alignParentRight="true"
+android:layout_alignParentTop="true"
+android:orientation="vertical" >
+
+<TextView
+android:id="@+id/textView01"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/textview" />
+
+<TextView
+android:id="@+id/textView02"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/textview" />
+
+<TextView
+android:id="@+id/textView03"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/textview" />
+
+<TextView
+android:id="@+id/textView04"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/textview" />
+
+<TextView
+android:id="@+id/textView05"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/textview" />
+
+<TextView
+android:id="@+id/TextView06"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/textview" />
+
+
+
+Unknown end tag for &lt;/LinearLayout&gt;
+
+
+
+
+
+Unknown end tag for &lt;/RelativeLayout&gt;
+
+
+
+```
